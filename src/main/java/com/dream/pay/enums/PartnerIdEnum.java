@@ -8,14 +8,13 @@ import lombok.Getter;
  * Created by mengzhenbin on 16/7/21.
  */
 public enum PartnerIdEnum {
-    SHANGCHENG("1001", "有赞微商城"),
-    XIAODIAN("1002", "有赞微小店"),
-    SHOUYIN("1003", "有赞收银"),
-    LINGSHOU("1004", "有赞零售"),
-    MEIYE("1005", "有赞美业"),
-    CANYIN("1006", "有赞餐饮"),
-    PIFA("1007", "有赞批发"),
-    SHOUKUAN("1008", "有赞收款");
+    SHANGCHENG("10000001", "微商城"),
+    XIAODIAN("10000002", "微小店"),
+    SHOUYIN("10000003", "收银"),
+    LINGSHOU("10000004", "零售"),
+    MEIYE("10000005", "美业"),
+    CANYIN("10000006", "餐饮"),
+    PIFA("10000007", "批发"),;
     @Getter
     private final String code;
     @Getter
