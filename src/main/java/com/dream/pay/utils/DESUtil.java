@@ -1,6 +1,5 @@
 package com.dream.pay.utils;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -117,51 +116,5 @@ public class DESUtil {
         return key;
     }
 
-    public static void main(String[] args) {
 
-        System.out.println(new String(DESUtil.decryptModeBase64("DTB3fac9aMCrGXpX40wdlQ==")));
-
-        String wechatSignKey = "SIWJ2XBWWQWHD9FS";
-        String wechatSignKeyMi = DESUtil.encryptModeBase64(wechatSignKey.getBytes());
-        System.out.println("Des后Base64编码转换后：" + wechatSignKeyMi);
-        System.out.println("Base64解码后Des转换后：" + new String(DESUtil.decryptModeBase64(wechatSignKeyMi)));
-        System.out.println("############################################");
-
-        System.out.println(
-                "=============================================================================================");
-        System.out.print("财付通WAP(1217388701)=====");//
-        System.out.println(
-                new String(DESUtil.decryptModeBase64("4C2x5eM+JSGLtHH0yWzVnUgugHzKOpTcBRsCEHK0u15RLBFvMizF2Q==")));
-        System.out.println(
-                "=============================================================================================");
-        System.out.print("财付通(1213044701)=====");
-        System.out.println(
-                new String(DESUtil.decryptModeBase64("V33VL2U1gI+HRLsfZROcPzaCiuCv5C+MEzQzRFxlJFFRLBFvMizF2Q==")));
-        System.out.println(
-                "=============================================================================================");
-        System.out.print("块钱(1000651725101)=====");
-        System.out.println(new String(DESUtil.decryptModeBase64("NXCfb6du7Z09qdSL3MFLa1EsEW8yLMXZ")));
-        System.out.println(
-                "=============================================================================================");
-        System.out.print("微信扫码和微信公账(1312747401||wx8be4aaecf78a1934)=====");
-        System.out.println(
-                new String(DESUtil.decryptModeBase64("B/n9pCssu57LFQsJwU/DKqqUePf1RVyAfNn4uJ1qnwxRLBFvMizF2Q==")));
-        System.out.print("微信app(1312967101||wx862db9d365a49f09)=====");
-        System.out.println(
-                new String(DESUtil.decryptModeBase64("VgZrM0zM78QfWh0lcr1MWrUKNOE+Eu7R8nd4iX7lejBRLBFvMizF2Q==")));
-        System.out.println(
-                "=============================================================================================");
-        System.out.print("支付宝拍卖(2088301773687981||zhifubao-pm@dangdang.com)=====");
-        System.out.println(
-                new String(DESUtil.decryptModeBase64("uT3B0SnHWGlIqZoNEur4MweGHOtDHSBwSjZN0cWW6VFRLBFvMizF2Q==")));
-        System.out.print("支付宝无线(2088901524471441||zhifubao-wx@dangdang.com)=====");
-        System.out.println(
-                new String(DESUtil.decryptModeBase64("m9vkL4k1vP3vlTCNwMljXR6CidVjVUCsGsamVNpPE/JRLBFvMizF2Q==")));
-        System.out.print("支付宝PC(2088421631345065||zhifubao@dangdang.com)=====");
-        System.out.println(
-                new String(DESUtil.decryptModeBase64("diE+xwMC8sD8ldB68ijZ+uAF/iONHX7ETb/hJ/v7UG1RLBFvMizF2Q==")));
-        System.out.println(
-                "=============================================================================================");
-
-    }
 }
