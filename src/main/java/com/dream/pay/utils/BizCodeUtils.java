@@ -1,6 +1,6 @@
 package com.dream.pay.utils;
 
-import com.dream.pay.constants.UnifiedBizCode;
+import com.dream.pay.enums.UnifiedBizCode;
 import com.dream.pay.validators.BizCodeValidate;
 
 /**

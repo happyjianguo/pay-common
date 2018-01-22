@@ -9,6 +9,7 @@ import java.util.List;
  * 支付工具类型枚举
  *
  * @author mengzhenbin
+ * @since 2016-09-06
  */
 public enum PayToolType {
     /**

@@ -1,20 +1,19 @@
 package com.dream.pay.bean;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 
 /**
- * 分页信息
+ * 分页对象
  *
- * @author 冰宁 on 2017/1/10.
+ * @author mengzhenbin
+ * @since 2016-09-06
  */
 @Data
 @ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode
 public class PageInfo implements Serializable {
 
@@ -39,21 +38,7 @@ public class PageInfo implements Serializable {
      * 总页数
      */
     public int getTotalPage() {
-        int totalPage = ((int) Math.ceil(1.0*totalNum/pageSize));
+        int totalPage = ((int) Math.ceil(1.0 * totalNum / pageSize));
         return totalPage == 0 ? 1 : totalPage;
     }
-
-    /**
-     * 分页信息对象构造方法
-     *
-     * @param pageNo 页码
-     * @param pageSize 每页数据量
-     * @param totalNum 总数据量
-     */
-    public PageInfo(int pageNo, int pageSize, long totalNum) {
-        this.pageNo = pageNo;
-        this.pageSize = pageSize;
-        this.totalNum = totalNum;
-    }
-
 }

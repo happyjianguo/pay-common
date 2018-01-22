@@ -1,5 +1,11 @@
 package com.dream.pay.enums;
 
+/**
+ * 卡类型
+ *
+ * @author mengzhenbin
+ * @since 2016-09-06
+ */
 public enum CardTypeEnum {
     DEBIT("D", "借记卡"), CREDIT("C", "贷记卡");
     private String value;

@@ -104,7 +104,7 @@ public class DESUtil {
         byte[] key = new byte[24]; // 声明一个24位的字节数组，默认里面都是0
         byte[] temp = keyStr.getBytes("UTF-8"); // 将字符串转成字节数组
         /*
-		 * 执行数组拷贝 System.arraycopy(源数组，从源数组哪里开始拷贝，目标数组，拷贝多少位)
+         * 执行数组拷贝 System.arraycopy(源数组，从源数组哪里开始拷贝，目标数组，拷贝多少位)
 		 */
         if (key.length > temp.length) {
             // 如果temp不够24位，则拷贝temp数组整个长度的内容到key数组中

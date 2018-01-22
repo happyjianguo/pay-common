@@ -10,8 +10,7 @@ import lombok.Getter;
  * 支付工具，给外部系统使用，会映射到我们内部API。
  *
  * @author mengzhenbin
- * @version PayTool.java
- *          2016-12-26 15:34
+ * @since 2016-09-06
  */
 public enum BizChannelEnum {
 

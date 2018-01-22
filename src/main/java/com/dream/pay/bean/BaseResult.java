@@ -5,7 +5,10 @@ import lombok.*;
 import java.io.Serializable;
 
 /**
- * Created by mengzhenbin on 2017/10/9.
+ * 基础对象
+ *
+ * @author mengzhenbin
+ * @since 2016-09-06
  */
 @Data
 @ToString

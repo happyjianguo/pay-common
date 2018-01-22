@@ -4,12 +4,11 @@ package com.dream.pay.utils;
 import com.dream.pay.bean.ValidationResult;
 import org.apache.commons.collections.CollectionUtils;
 
-import java.util.Set;
-
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
+import java.util.Set;
 
 /**
  * 参数校验工具.
@@ -20,7 +19,6 @@ import javax.validation.ValidatorFactory;
  * @since 2016-09-06
  */
 public class ValidationUtils {
-
 
     /**
      * 校验

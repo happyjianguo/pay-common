@@ -11,17 +11,25 @@
     <properties>
         <!-- 三方库 -->
         <lombok.version>1.16.6</lombok.version>
-        <spring.version>3.2.13.RELEASE</spring.version>
         <validation-api>1.0.0.GA</validation-api>
+
+        <spring.version>3.2.13.RELEASE</spring.version>
+
         <commons-lang3.version>3.4</commons-lang3.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <commons-beanutils.version>1.9.2</commons-beanutils.version>
+
         <guava.version>19.0</guava.version>
+
         <httpcore.version>4.4.3</httpcore.version>
         <httpclient.version>4.3.6</httpclient.version>
+
         <jackson-mapper-asl.version>1.9.12</jackson-mapper-asl.version>
         <jackson-databind.version>2.3.0</jackson-databind.version>
         <dom4j.version>1.6.1</dom4j.version>
+
+        <nsq-client.version>2.4-RELEASE</nsq-client.version>
+
     </properties>
 
     <dependencies>
@@ -35,11 +43,20 @@
             <artifactId>validation-api</artifactId>
             <version>${validation-api}</version>
         </dependency>
+
+
+        <!-- spring 类库 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -55,11 +72,13 @@
             <artifactId>commons-beanutils</artifactId>
             <version>${commons-beanutils.version}</version>
         </dependency>
+
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
@@ -70,6 +89,7 @@
             <artifactId>httpclient</artifactId>
             <version>${httpclient.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
@@ -80,11 +100,21 @@
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-databind.version}</version>
         </dependency>
+
         <dependency>
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
             <version>${dom4j.version}</version>
         </dependency>
+
+        <!-- youzan nsql.client -->
+        <dependency>
+            <groupId>com.youzan</groupId>
+            <artifactId>NSQ-Client</artifactId>
+            <version>${nsq-client.version}</version>
+        </dependency>
+
+
     </dependencies>
     <build>
         <plugins>
@@ -118,6 +148,14 @@
             <plugin>
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.1</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>

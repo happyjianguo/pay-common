@@ -5,6 +5,7 @@ package com.dream.pay.enums;
  * 收支类型通用配置
  *
  * @author mengzhenbin
+ * @since 2016-09-06
  */
 public enum InOutEnum {
     IN("收入", 1),

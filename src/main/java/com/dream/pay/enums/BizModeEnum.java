@@ -4,8 +4,9 @@ import lombok.Getter;
 
 /**
  * 三级业务标识-业务模式
- * <p>
- * Created by mengzhenbin on 16/7/21.
+ *
+ * @author mengzhenbin
+ * @since 2016-09-06
  */
 public enum BizModeEnum {
 
@@ -17,7 +18,7 @@ public enum BizModeEnum {
 
     AGENT_PAY(2004, "代付"),
 
-    AGENT_RECEIPT(2005,"代收");
+    AGENT_RECEIPT(2005, "代收");
 
     @Getter
     private final Integer code;
@@ -53,6 +54,7 @@ public enum BizModeEnum {
 
     /**
      * 通过枚举<code>name</code>获得枚举
+     *
      * @param name 名称
      * @return 类型枚举
      */

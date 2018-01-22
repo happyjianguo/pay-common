@@ -7,7 +7,8 @@ import lombok.ToString;
 /**
  * 数据结果集
  *
- * @author mengzhenbin on 2017/1/10.
+ * @author mengzhenbin
+ * @since 2016-09-06
  */
 @Data
 @ToString(callSuper = true)

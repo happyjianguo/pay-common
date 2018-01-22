@@ -2,8 +2,9 @@ package com.dream.pay.enums;
 
 /**
  * 币种枚举
- * <p>
- * Created by mengzhenbin on 17/9/22.
+ *
+ * @author mengzhenbin
+ * @since 2016-09-06
  */
 public enum CurrencyCode {
 

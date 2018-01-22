@@ -1,10 +1,12 @@
-package com.dream.pay.constants;
+package com.dream.pay.enums;
 
 import com.dream.pay.validators.BizCodeValidate;
 
 import java.io.Serializable;
 
 /**
+ * 四码一号
+ *
  * @Author mengzhenbin
  * @Since 2018/1/10
  */

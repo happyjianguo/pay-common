@@ -1,6 +1,8 @@
 package com.dream.pay.bean;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * 参数校验结果类
@@ -9,6 +11,8 @@ import lombok.Data;
  * @since 2016-09-06
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ValidationResult {
 
     /*校验通过?*/
@@ -17,12 +21,4 @@ public class ValidationResult {
     /*校验失败描述*/
     private String message;
 
-    public ValidationResult() {
-
-    }
-
-    public ValidationResult(boolean success, String message) {
-        this.success = success;
-        this.message = message;
-    }
 }

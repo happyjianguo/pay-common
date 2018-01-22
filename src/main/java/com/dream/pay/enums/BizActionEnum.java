@@ -4,8 +4,9 @@ import lombok.Getter;
 
 /**
  * 三级业务标识-业务操作类型
- * <p>
- * Created by mengzhenbin on 16/7/21.
+ *
+ * @author mengzhenbin
+ * @since 2016-09-06
  */
 public enum BizActionEnum {
 

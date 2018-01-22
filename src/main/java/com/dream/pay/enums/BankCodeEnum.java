@@ -2,7 +2,13 @@ package com.dream.pay.enums;
 
 import lombok.Getter;
 
-public enum BankCode {
+/**
+ * 银行编码枚举
+ *
+ * @author mengzhenbin
+ * @since 2016-09-06
+ */
+public enum BankCodeEnum {
     BOC("中国银行"),
     ABC("中国农业银行"),
     CCB("中国建设银行"),
@@ -40,7 +46,7 @@ public enum BankCode {
     @Getter
     private String desc;
 
-    BankCode(String desc) {
+    BankCodeEnum(String desc) {
         this.desc = desc;
     }
 

@@ -4,8 +4,9 @@ import lombok.Getter;
 
 /**
  * 业务线
- * <p>
- * Created by mengzhenbin on 16/7/21.
+ *
+ * @author mengzhenbin
+ * @since 2016-09-06
  */
 public enum PartnerIdEnum {
     SHANGCHENG("10000001", "微商城"),

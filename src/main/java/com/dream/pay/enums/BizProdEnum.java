@@ -6,8 +6,9 @@ import java.util.List;
 
 /**
  * 三级业务标识-产品模式
- * <p>
- * Created by mengzhenbin on 16/7/21.
+ *
+ * @author mengzhenbin
+ * @since 2016-09-06
  */
 public enum BizProdEnum {
     TRADING_TYPE_COMMON(1001, "普通交易"),//支持消费，退款
