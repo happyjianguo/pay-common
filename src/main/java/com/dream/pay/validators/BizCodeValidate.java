@@ -5,8 +5,10 @@ import lombok.NoArgsConstructor;
 import java.util.regex.Pattern;
 
 /**
- * @Author mengzhenbin
- * @Since 2018/1/10
+ * @author mengzhenbin
+ * @version V1.0
+ * @date 2017年3月1日
+ * @descrption 四码一号校验<br/>
  */
 @NoArgsConstructor
 public class BizCodeValidate {

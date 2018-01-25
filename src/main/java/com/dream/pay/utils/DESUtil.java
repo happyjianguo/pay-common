@@ -1,7 +1,6 @@
 package com.dream.pay.utils;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -9,10 +8,13 @@ import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
 
 /**
- * @author zhenbinmeng
+ * @author mengzhenbin
+ * @version V1.0
+ * @Since 2017年3月1日
+ * @descrption DESUtil<br/>
  */
+@Slf4j
 public class DESUtil {
-    private static final Log log = LogFactory.getLog(DESUtil.class);
 
     // 定义加密算法，DESede(即3DES)
     private static final String DESede = "DESede";

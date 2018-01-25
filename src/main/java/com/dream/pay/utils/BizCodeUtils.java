@@ -4,8 +4,10 @@ import com.dream.pay.enums.UnifiedBizCode;
 import com.dream.pay.validators.BizCodeValidate;
 
 /**
- * @Author mengzhenbin
- * @Since 2018/1/10
+ * @author mengzhenbin
+ * @version V1.0
+ * @sine 2017年3月1日
+ * @descrption 四码一号解析工具类<br/>
  */
 public class BizCodeUtils {
     private static final String REG_EXP = "(?<=\\G.{4})";

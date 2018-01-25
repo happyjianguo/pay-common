@@ -39,6 +39,7 @@ public enum PayTool {
      */
     WX_APPLET(4016, PayToolType.PLAT_PAY, "微信小程序支付", true),
 
+
     /**
      * 支付宝-二维码支付
      **/
@@ -68,13 +69,14 @@ public enum PayTool {
 
 
     /**
-     * 通用预付卡
-     */
-    VALUE_CARD(4041, PayToolType.INNER_PAY, "储值卡支付"),
-    /**
      * 余额支付
      */
-    BALANCE(4042, PayToolType.INNER_PAY, "余额支付"),
+    BALANCE(4041, PayToolType.INNER_PAY, "余额支付"),
+
+    /**
+     * 储值卡
+     */
+    VALUE_CARD(4042, PayToolType.INNER_PAY, "储值卡支付"),
     /**
      * 礼品卡
      */

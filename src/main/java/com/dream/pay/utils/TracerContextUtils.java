@@ -3,9 +3,13 @@ package com.dream.pay.utils;
 import java.util.UUID;
 
 /**
- * 全局跟踪上下文工具,目的是便于日志中定位问题
+ * @author mengzhenbin
+ * @version V1.0
+ * @date 2017年3月1日
+ * @descrption 全局跟踪上下文工具<br/>
  * <p>
- * Created by mengzhenbin on 16/9/2.
+ * 便于日志中定位问题
+ * </p>
  */
 public class TracerContextUtils {
 

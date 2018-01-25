@@ -8,7 +8,9 @@ import java.math.BigDecimal;
 import java.util.Currency;
 
 /**
- * 收单系统统一money类,所有money操作统一使用此类,不可以直接操作 <p>默认构造返回0分,CNY币种</p>
+ * 收单系统统一money类,
+ * 所有money操作统一使用此类,不可以直接操作
+ * <p>默认构造返回0分,CNY币种</p>
  *
  * @author mengzhenbin
  * @since 2016-09-06

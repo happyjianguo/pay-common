@@ -12,13 +12,14 @@ import java.io.StringWriter;
 import java.util.*;
 
 /**
- * Xml序列化与反序列化工具类
+ * @author mengzhenbin
+ * @version V1.0
+ * @date 2017年3月1日
+ * @descrption Xml序列化与反序列化工具类<br/>
  * <p>
  * 转Map使用dom4j<br/>
  * 对象与xml互转使用jaxb(Java API for XML Binding)
  * </p>
- *
- * @author mengzhenbin
  */
 public class XmlUtil {
 

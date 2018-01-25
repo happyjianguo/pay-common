@@ -14,7 +14,7 @@ import java.util.Map.Entry;
 /**
  * @author mengzhenbin
  * @version V1.0
- * @date 2017年3月1日
+ * @sine 2017年3月1日
  * @descrption 与org.apache.commons.beanutils的BeanUtils功能类似<br/>
  * 通过BeanUtilsBean处理
  */
@@ -23,7 +23,6 @@ public class BeanUtil {
     private static final ConvertUtilsBean convertUtilsBean = beanUtilsBean.getConvertUtils();
 
     static {
-        // convertUtilsBean.register(false, false, 0);
         DateConverter dateConverter = new DateConverter(null);
         String[] patterns = {"yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss.SSS", "yyyy/MM/dd HH:mm:ss",
                 "yyyy/MM/dd"};

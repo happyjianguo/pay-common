@@ -8,12 +8,11 @@ import java.lang.reflect.Type;
 
 /**
  * 反射工具类.
- *
+ * <p>
  * 提供获取泛型类型Class工具函数.
  *
  * @author xiukuan
  * @since 2016-08-08
- *
  */
 
 @Slf4j
@@ -32,7 +31,7 @@ public class Reflections {
 
     /**
      * 通过反射, 获得Class定义中声明的父类的泛型参数的类型. 如无法找到, 返回Object.class.
-     *
+     * <p>
      * 如public UserDao extends HibernateDao<User,Long>
      *
      * @param clazz clazz The class to introspect

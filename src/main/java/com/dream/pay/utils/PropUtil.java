@@ -10,9 +10,14 @@ import org.apache.commons.lang3.math.NumberUtils;
 import java.util.*;
 
 /**
- * 属性获取工具<br/>
- *
- * @author chenjianchunjs
+ * @author mengzhenbin
+ * @version V1.0
+ * @date 2017年3月1日
+ * @descrption 属性获取工具类
+ * <p>
+ * 使用jackson 1.9.x版本<br />
+ * 由于目前Dubbo还是使用jackson 1.9.x做序列化，保持一致
+ * </p>
  */
 public class PropUtil {
     public static final Properties properties = PropertiesLoader.getProperties();

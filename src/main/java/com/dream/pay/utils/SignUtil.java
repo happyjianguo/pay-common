@@ -20,10 +20,13 @@ import java.security.spec.PKCS8EncodedKeySpec;
 import java.security.spec.X509EncodedKeySpec;
 
 /**
- * 摘要、签名工具<br/>
+ * @author mengzhenbin
+ * @version V1.0
+ * @date 2017年3月1日
+ * @descrption 摘要、签名工具<br/>
+ * <p>
  * 包含MD5、KEY、RSA等算法
- *
- * @author chenjianchunjs
+ * </p>
  */
 public class SignUtil {
 

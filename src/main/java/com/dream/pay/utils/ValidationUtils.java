@@ -11,12 +11,13 @@ import javax.validation.ValidatorFactory;
 import java.util.Set;
 
 /**
- * 参数校验工具.
- * <p>
- * 不是造轮子,而是遵循JSR-349标准规范. 这里使用hibernate-validate的JSR-349规范实现.
- *
  * @author mengzhenbin
- * @since 2016-09-06
+ * @version V1.0
+ * @date 2017年3月1日
+ * @descrption 参数校验工具<br/>
+ * <p>
+ * 遵循JSR-349标准规范. 这里使用hibernate-validate的JSR-349规范实现.
+ * </p>
  */
 public class ValidationUtils {
 

@@ -3,13 +3,18 @@ package com.dream.pay.utils;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
+/**
+ * @author mengzhenbin
+ * @version V1.0
+ * @Since 2017年3月1日
+ * @descrption Base64编码<br/>
+ */
 public class BASE64Util {
 
     /**
      * base 64 encode
-     * 
-     * @param bytes
-     *            待编码的byte[]
+     *
+     * @param bytes 待编码的byte[]
      * @return 编码后的base 64 code
      */
     public static String base64Encode(byte[] bytes) {
@@ -18,9 +23,8 @@ public class BASE64Util {
 
     /**
      * base 64 decode
-     * 
-     * @param base64Code
-     *            待解码的base 64 code
+     *
+     * @param base64Code 待解码的base 64 code
      * @return 解码后的byte[]
      * @throws Exception
      */

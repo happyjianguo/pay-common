@@ -18,7 +18,7 @@ import java.text.SimpleDateFormat;
  * @author mengzhenbin
  * @version V1.0
  * @date 2017年3月1日
- * @descrption Json序列化与反序列化工具类
+ * @descrption Json序列化与反序列化工具类<br/>
  * <p>
  * 使用jackson 1.9.x版本<br />
  * 由于目前Dubbo还是使用jackson 1.9.x做序列化，保持一致

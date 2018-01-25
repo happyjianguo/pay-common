@@ -1,12 +1,18 @@
 package com.dream.pay.utils;
 
-import java.sql.Timestamp;
-import java.text.ParseException;
+import com.dream.pay.constants.Constant;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+/**
+ * @author mengzhenbin
+ * @version V1.0
+ * @sine 2017年3月1日
+ * @descrption 时间处理工具类<br/>
+ */
 public class DateUtil extends Date {
     /**
      * 日期按照格式进行格式化
@@ -23,90 +29,13 @@ public class DateUtil extends Date {
     }
 
     /**
-     * 日期格式化成 yyyy-MM-dd
-     *
-     * @param date
-     * @return
-     */
-    public static String DateToString(Date date) {
-        String _pattern = "yyyy-MM-dd";
-        return date == null ? null : DateToString(date, _pattern);
-    }
-
-    /**
      * 日期格式化成 yyyy-MM-dd HH:mm:ss
      *
      * @param date
      * @return
      */
-    public static String DateTimeToString(Date date) {
-        String _pattern = "yyyy-MM-dd HH:mm:ss";
-        return date == null ? null : DateToString(date, _pattern);
-    }
-
-    /**
-     * 日期格式化成 yyyy-MM-dd HH:mm:ss:SSS
-     *
-     * @param date
-     * @return
-     */
-    public static String DateStampToString(Date date) {
-        String _pattern = "yyyy-MM-dd HH:mm:ss:SSS";
-        return date == null ? null : DateToString(date, _pattern);
-    }
-
-    /**
-     * 日期格式化成 yyyyMMddHHmmssSSS
-     *
-     * @param date
-     * @return
-     */
-    public static String DateStampToStringNoSp(Date date) {
-        String _pattern = "yyyyMMddHHmmssSSS";
-        return date == null ? null : DateToString(date, _pattern);
-    }
-
-    /**
-     * 日期格式化成 yyyyMMddHHmmss 四位年月日时分秒
-     *
-     * @param date
-     * @return
-     */
-    public static String DateStampToStringMs(Date date) {
-        String _pattern = "yyyyMMddHHmmss";
-        return date == null ? null : DateToString(date, _pattern);
-    }
-
-    /**
-     * 日期格式化成 yyMMddHHmmss 两位年月日时分秒
-     *
-     * @param date
-     * @return
-     */
-    public static String DateStampToStringYY(Date date) {
-        String _pattern = "yyMMddHHmmss";
-        return date == null ? null : DateToString(date, _pattern);
-    }
-
-    /**
-     * 日期格式化成 yyyyMMdd
-     *
-     * @param date
-     * @return
-     */
-    public static String DateStampToStringyyyyMMdd(Date date) {
-        String _pattern = "yyyyMMdd";
-        return date == null ? null : DateToString(date, _pattern);
-    }
-
-    /**
-     * 日期格式化成 HHmmss
-     *
-     * @param date
-     * @return
-     */
-    public static String DateStampToStringHHmmss(Date date) {
-        String _pattern = "HHmmss";
+    public static String DateToDefaultString(Date date) {
+        String _pattern = Constant.DATE_DEFAULT_FORMAT;
         return date == null ? null : DateToString(date, _pattern);
     }
 
@@ -130,38 +59,16 @@ public class DateUtil extends Date {
     }
 
     /**
-     * 字符串按照一定格式格式化日期 yyyy-MM-dd
+     * 日期格式化成 yyyy-MM-dd HH:mm:ss
      *
      * @param str
      * @return
      */
-    public static Date StringToDate(String str) {
-        String _pattern = "yyyy-MM-dd";
-        return StringToDate(str, _pattern);
+    public static Date StringToDefaultDate(String str) {
+        String _pattern = Constant.DATE_DEFAULT_FORMAT;
+        return str == null ? null : StringToDate(str, _pattern);
     }
 
-    /**
-     * 字符串按照一定格式格式化日期 yyyy-MM-dd HH:mm:ss
-     *
-     * @param str
-     * @return
-     */
-    public static Date StringToDateTime(String str) {
-        String _pattern = "yyyy-MM-dd HH:mm:ss";
-        return StringToDate(str, _pattern);
-    }
-
-    /**
-     * 字符串按照一定格式格式化日期 yyyy-MM-dd
-     *
-     * @param str
-     * @return
-     */
-    public static Timestamp StringToDateHMS(String str) {
-        Timestamp time = null;
-        time = Timestamp.valueOf(str);
-        return time;
-    }
 
     /**
      * 根据年、月、日格式成Date
@@ -175,18 +82,6 @@ public class DateUtil extends Date {
         Calendar calendar = Calendar.getInstance();
         calendar.set(year, month, day);
         return calendar.getTime();
-    }
-
-    /**
-     * 日期格式化成 MM/dd HH:mm:ss
-     *
-     * @param date
-     * @return
-     */
-    public static String communityDateToString(Date date) {
-        SimpleDateFormat formater = new SimpleDateFormat("MM/dd HH:mm:ss");
-        String strDateTime = date == null ? null : formater.format(date);
-        return strDateTime;
     }
 
     public static Date getMaxDateOfDay(Date date) {
@@ -252,7 +147,7 @@ public class DateUtil extends Date {
      * @param date2
      * @return
      */
-    public static int DateDiff(Date date1, Date date2) {
+    public static int DayDiff(Date date1, Date date2) {
         int i = (int) ((date1.getTime() - date2.getTime()) / 3600 / 24 / 1000);
         return i;
     }
@@ -333,7 +228,6 @@ public class DateUtil extends Date {
      */
     public static String formatDate2Str(Date date) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
         return sdf.format(date);
     }
 
@@ -368,49 +262,6 @@ public class DateUtil extends Date {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         sdf.setLenient(false);
         return sdf.format(new Date()).split("-")[2].split(" ")[0];
-    }
-
-    /**
-     * 将字符串转换为可查询的Date类型，默认格式(yyyyMMddHHmmss)
-     *
-     * @param String
-     * @return Date
-     * @throws ParseException
-     */
-
-    public static Date convertStr2DateForQuery(String source) {
-        if (source == null || source.trim().length() != 14)
-            return null;
-
-        Date date = null;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-        sdf.setLenient(false);
-        try {
-            date = sdf.parse(source);
-        } catch (ParseException e) {
-        }
-
-        return date;
-    }
-
-    /**
-     * 将字符串转换为可查询的Date类型，默认格式(yyyyMMddHHmmss)
-     *
-     * @param source
-     * @return Date
-     * @throws ParseException
-     */
-
-    public static Date convertStrToDate(String source) {
-        Date date = null;
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        sdf.setLenient(false);
-        try {
-            date = sdf.parse(source);
-        } catch (ParseException e) {
-        }
-
-        return date;
     }
 
     /**
