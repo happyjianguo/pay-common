@@ -1,4 +1,4 @@
-package com.dream.pay.nsq;
+package com.dream.pay.nsq.filter;
 
 /**
  * 消息过滤接口.

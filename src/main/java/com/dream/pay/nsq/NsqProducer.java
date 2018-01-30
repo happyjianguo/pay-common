@@ -114,8 +114,8 @@ public class NsqProducer implements InitializingBean, DisposableBean {
             return;
         }
 
-        //发送顺序消息，通过 shardingID hash 到指定的 partition
         if (null != shardingID && shardingID > 0) {
+            //发送顺序消息，通过 shardingID hash 到指定的 partition
             Message message = Message.create(new Topic(topic), JsonUtil.toJson(msg));
             message.setTopicShardingIDLong(shardingID);
             this.producer.publish(message);

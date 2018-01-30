@@ -1,6 +1,7 @@
 package com.dream.pay.utils;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
@@ -19,17 +20,18 @@ public class DESUtil {
     // 定义加密算法，DESede(即3DES)
     private static final String DESede = "DESede";
 
-    private static final String PASSWORD_CRYPT_KEY = "2015mengzhenbinStudyForSecurity@DESede";
+    private static final String DEFAULT_PASSWORD_CRYPT_KEY = "2015mengzhenbinStudyForSecurity@DESede";
 
     /**
      * 加密方法
      *
-     * @param src 源数据的字节数组
+     * @param src     源数据的字节数组
+     * @param dataKey 加密密钥
      * @return
      */
-    public static byte[] encryptMode(byte[] src) {
+    public static byte[] encryptMode(byte[] src, String dataKey) {
         try {
-            SecretKey deskey = new SecretKeySpec(build3DesKey(PASSWORD_CRYPT_KEY), DESede); // 生成密钥
+            SecretKey deskey = new SecretKeySpec(build3DesKey(dataKey, DEFAULT_PASSWORD_CRYPT_KEY), DESede); // 生成密钥
             Cipher c1 = Cipher.getInstance(DESede); // 实例化负责加密/解密的Cipher工具类
             c1.init(Cipher.ENCRYPT_MODE, deskey); // 初始化为加密模式
             return c1.doFinal(src);
@@ -42,17 +44,18 @@ public class DESUtil {
     /**
      * 加密方法(BASE64编码返回)
      *
-     * @param src 源数据的字节数组
+     * @param src     源数据的字节数组
+     * @param dataKey 加密密钥
      * @return
      */
-    public static String encryptModeBase64(byte[] src) {
+    public static String encryptModeBase64(byte[] src, String dataKey) {
         try {
-            SecretKey deskey = new SecretKeySpec(build3DesKey(PASSWORD_CRYPT_KEY), DESede); // 生成密钥
+            SecretKey deskey = new SecretKeySpec(build3DesKey(dataKey, DEFAULT_PASSWORD_CRYPT_KEY), DESede); // 生成密钥
             Cipher c1 = Cipher.getInstance(DESede); // 实例化负责加密/解密的Cipher工具类
             c1.init(Cipher.ENCRYPT_MODE, deskey); // 初始化为加密模式
             return BASE64Util.base64Encode(c1.doFinal(src));
         } catch (Exception e) {
-            log.error("DesUtil.encryptMode error", e);
+            log.error("DesUtil.encryptModeBase64 error", e);
         }
         return null;
     }
@@ -60,12 +63,13 @@ public class DESUtil {
     /**
      * 解密函数
      *
-     * @param src 密文的字节数组
+     * @param src     密文的字节数组
+     * @param dataKey 解密密钥
      * @return
      */
-    public static byte[] decryptMode(byte[] src) {
+    public static byte[] decryptMode(byte[] src, String dataKey) {
         try {
-            SecretKey deskey = new SecretKeySpec(build3DesKey(PASSWORD_CRYPT_KEY), DESede);
+            SecretKey deskey = new SecretKeySpec(build3DesKey(dataKey, DEFAULT_PASSWORD_CRYPT_KEY), DESede);
             Cipher c1 = Cipher.getInstance(DESede);
             c1.init(Cipher.DECRYPT_MODE, deskey); // 初始化为解密模式
             return c1.doFinal(src);
@@ -78,17 +82,18 @@ public class DESUtil {
     /**
      * 解密函数(BASE64解码后解密)
      *
-     * @param src 密文的字节数组
-     * @return
+     * @param data    密文的字节数组
+     * @param dataKey 加密密钥
+     * @return String
      */
-    public static String decryptModeBase64(String src) {
+    public static String decryptModeBase64(String data, String dataKey) {
         try {
-            SecretKey deskey = new SecretKeySpec(build3DesKey(PASSWORD_CRYPT_KEY), DESede);
+            SecretKey deskey = new SecretKeySpec(build3DesKey(dataKey, DEFAULT_PASSWORD_CRYPT_KEY), DESede);
             Cipher c1 = Cipher.getInstance(DESede);
             c1.init(Cipher.DECRYPT_MODE, deskey); // 初始化为解密模式
-            return new String(c1.doFinal(BASE64Util.base64Decode(src)));
+            return new String(c1.doFinal(BASE64Util.base64Decode(data)));
         } catch (Exception e) {
-            log.error("DesUtil.decryptMode error", e);
+            log.error("DesUtil.decryptModeBase64 error", e);
         }
         return null;
     }
@@ -102,7 +107,10 @@ public class DESUtil {
      *
      * @throws UnsupportedEncodingException
      */
-    public static byte[] build3DesKey(String keyStr) throws UnsupportedEncodingException {
+    public static byte[] build3DesKey(String keyStr, String defaultKey) throws UnsupportedEncodingException {
+        if (StringUtils.isBlank(keyStr)) {
+            keyStr = defaultKey;
+        }
         byte[] key = new byte[24]; // 声明一个24位的字节数组，默认里面都是0
         byte[] temp = keyStr.getBytes("UTF-8"); // 将字符串转成字节数组
         /*

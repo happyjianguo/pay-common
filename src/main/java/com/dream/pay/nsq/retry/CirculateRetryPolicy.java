@@ -1,7 +1,5 @@
 package com.dream.pay.nsq.retry;
 
-import com.dream.pay.nsq.retry.NsqRequeueException;
-import com.dream.pay.nsq.retry.NsqRetryHandler;
 import com.youzan.nsq.client.entity.NSQMessage;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -40,9 +38,7 @@ public class CirculateRetryPolicy implements NsqRetryHandler {
             //设置消息重试时间间隔, nsq客户端会根据这个字段去重试
             originMessage.setNextConsumingInSecond(nextConsumingInSecond);
 
-            log.warn("[消息消费者]-设置消息{}s后重发,originMessage={},message={}",
-                    nextConsumingInSecond,
-                    originMessage, message);
+            log.warn("[消息消费者]-设置消息{}s后重发,originMessage={},message={}",nextConsumingInSecond,originMessage, message);
             return true;
         } catch (Exception e) {
             log.error("[消息消费者]-设置消息重发异常,originMessage={},message={}", originMessage, message, e);

@@ -3,6 +3,7 @@ package com.dream.pay.nsq;
 import com.dream.pay.nsq.config.NsqConfig;
 import com.dream.pay.nsq.decode.DefaultNsqMessageDecoder;
 import com.dream.pay.nsq.decode.NsqMessageDecoder;
+import com.dream.pay.nsq.filter.Filter;
 import com.dream.pay.nsq.retry.CirculateRetryPolicy;
 import com.dream.pay.nsq.retry.NsqRequeueException;
 import com.dream.pay.nsq.retry.NsqRetryHandler;
