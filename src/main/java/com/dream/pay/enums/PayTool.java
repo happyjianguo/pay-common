@@ -71,21 +71,21 @@ public enum PayTool {
     /**
      * 余额支付
      */
-    BALANCE(4041, PayToolType.INNER_PAY, "余额支付"),
+    BALANCE(4041, PayToolType.ACCOUNT_PAY, "余额支付"),
 
     /**
      * 储值卡
      */
-    VALUE_CARD(4042, PayToolType.INNER_PAY, "储值卡支付"),
+    VALUE_CARD(4042, PayToolType.ACCOUNT_PAY, "储值卡支付"),
     /**
      * 礼品卡
      */
-    GIFT_CARD(4043, PayToolType.INNER_PAY, "礼品卡支付"),
+    GIFT_CARD(4043, PayToolType.ACCOUNT_PAY, "礼品卡支付"),
 
     /**
      * 现金支付
      */
-    CASH_PAY(4044, PayToolType.INNER_PAY, "现金支付"),
+    CASH_PAY(4044, PayToolType.ACCOUNT_PAY, "现金支付"),
 
 
     /**
@@ -110,11 +110,11 @@ public enum PayTool {
     /**
      * 中信提现
      */
-    CITIC_WITHDRAW(4071, PayToolType.BANK_PAY, "中信提现"),
+    CITIC_WITHDRAW(4071, PayToolType.DAI_FU, "中信提现"),
     /**
      * 财付通提现
      */
-    TENPAY_WITHDRAW(4072, PayToolType.PLAT_PAY, "财付通提现");
+    TENPAY_WITHDRAW(4072, PayToolType.DAI_FU, "财付通提现");
 
     /**
      * 业务流向子码
